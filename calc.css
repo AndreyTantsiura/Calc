@@ -11,9 +11,12 @@
 	width: 180px;
 	height: 50px;
 	border: 1px solid grey;
+	word-wrap: break-word;
+	overflow: hidden;
 }
-.inner_clear, .iner_result {
-	width: 50px;
+.row_1 {
+	display: flex;
+	justify-content: space-between;
 }
 .numbers {
 	margin-top: 5px;
@@ -21,4 +24,7 @@
 }
 button {
 	margin: 5px;
+}
+.iner_result {
+	width: 50px;
 }

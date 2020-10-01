@@ -1,4 +1,4 @@
-var str = '';
+var str = '0';
 
 $('.number').click(function(event) {
 	symbol = $(this).text()
@@ -8,14 +8,30 @@ console.log(str)
 });
 
 $('.inner_clear').click(function(event) {
-	str = '';
-	$('.display').text(' ')
+	$('.display').text('')
+});
+
+$('.memory').click(function(event) {
+	console.log(str)
+});
+
+$('.radical').click(function(event) {
+	str = Math.sqrt(Number(str))
+	$('.display').text(str)
+	console.log(str)
+});
+
+$('.square').click(function(event) {
+	str = Math.pow(Number(str), 2)
+	$('.display').text(str)
+	console.log(str)
 });
 
 $('.plus').click(function(event) {
 		$('.display').append('+')
 	str += '+'
 	console.log(str)
+	$(thit).removeClass('active')
 });
 
 $('.minus').click(function(event) {
@@ -33,6 +49,12 @@ $('.multiply').click(function(event) {
 $('.divide').click(function(event) {
 		$('.display').append('/')
 	str += '/'
+	console.log(str)
+});
+
+$('.dot').click(function(event) {
+		$('.display').append('.')
+	str += '.'
 	console.log(str)
 });
 
