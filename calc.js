@@ -7,16 +7,17 @@ $('.number').click(function(event) {
 });
 
 $('.inner_clear').click(function(event) {
+	str = '0'
 	$('.display').text('')
 });
 
 $('.memory_plus').click(function(event) {
 	m = String($('.display').text())
-	$('.display').text('')
 });
 
 $('.memory_r').click(function(event) {
-	$('.display').append(m)
+	str += m
+	$('.display').text(str)
 });
 
 $('.radical').click(function(event) {
@@ -30,28 +31,30 @@ $('.square').click(function(event) {
 });
 
 $('.plus').click(function(event) {
-		$('.display').append('+')
 	str += '+'
+	$('.display').append('+')
+
 });
 
 $('.minus').click(function(event) {
-		$('.display').append('-')
 	str += '-'
+	$('.display').append('-')
+
 });
 
 $('.multiply').click(function(event) {
-		$('.display').append('*')
 	str += '*'
+	$('.display').append('*')
 });
 
 $('.divide').click(function(event) {
-		$('.display').append('/')
 	str += '/'
+	$('.display').append('/')
 });
 
 $('.dot').click(function(event) {
-		$('.display').append('.')
 	str += '.'
+	$('.display').append('.')
 });
 
 $('.iner_result').click(function(event) {
