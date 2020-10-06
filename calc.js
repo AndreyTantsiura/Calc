@@ -1,13 +1,19 @@
-var str = '0';
+var str = ''
 var m = 0
+var result
+
 $('.number').click(function(event) {
+	if (str === result) {
+		str = ''
+		$('.display').text('')
+	}
 	symbol = $(this).text()
 	$('.display').append(symbol)
 	str += symbol
 });
 
 $('.inner_clear').click(function(event) {
-	str = '0'
+	str = ''
 	$('.display').text('')
 });
 
@@ -21,45 +27,57 @@ $('.memory_r').click(function(event) {
 });
 
 $('.radical').click(function(event) {
-	str = Math.sqrt(Number(str))
-	$('.display').text(str)
+	result = Math.sqrt(Number(str))
+	$('.display').text(result)
+	str = result
 });
 
 $('.square').click(function(event) {
-	str = Math.pow(Number(str), 2)
-	$('.display').text(str)
+	result = Math.pow(Number(str), 2)
+	$('.display').text(result)
+	str = result
 });
 
 $('.plus').click(function(event) {
-	str += '+'
-	$('.display').append('+')
-
+		if (str[str.length - 1] !== '+') {
+			str += '+'
+			$('.display').append('+')
+		}
 });
 
 $('.minus').click(function(event) {
-	str += '-'
-	$('.display').append('-')
-
+		if (str[str.length - 1] !== '-') {
+			str += '-'
+			$('.display').append('-')
+		}
 });
 
 $('.multiply').click(function(event) {
-	str += '*'
-	$('.display').append('*')
+		if (str[str.length - 1] !== '*') {
+			str += '*'
+			$('.display').append('*')
+		}
 });
 
 $('.divide').click(function(event) {
-	str += '/'
-	$('.display').append('/')
+		if (str[str.length - 1] !== '/') {
+			str += '/'
+			$('.display').append('/')
+		}
 });
 
 $('.dot').click(function(event) {
-	str += '.'
-	$('.display').append('.')
+		if (str[str.length - 1] !== '.') {
+			str += '.'
+			$('.display').append('.')
+		}
+	console.log(str)
 });
 
 $('.iner_result').click(function(event) {
-	str = eval(str)
-	$('.display').text(str)
+	result = eval(str)
+	$('.display').text(result)
+	str = result
 });
 
 
